@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/aspen-folio-req/static/css/main.d1b05096.chunk.css",
+    "main.js": "/aspen-folio-req/static/js/main.1e6ebf08.chunk.js",
+    "main.js.map": "/aspen-folio-req/static/js/main.1e6ebf08.chunk.js.map",
+    "runtime-main.js": "/aspen-folio-req/static/js/runtime-main.48caf892.js",
+    "runtime-main.js.map": "/aspen-folio-req/static/js/runtime-main.48caf892.js.map",
+    "static/js/2.8376876c.chunk.js": "/aspen-folio-req/static/js/2.8376876c.chunk.js",
+    "static/js/2.8376876c.chunk.js.map": "/aspen-folio-req/static/js/2.8376876c.chunk.js.map",
+    "index.html": "/aspen-folio-req/index.html",
+    "precache-manifest.212b961d90d7e8aad72695c93a746210.js": "/aspen-folio-req/precache-manifest.212b961d90d7e8aad72695c93a746210.js",
+    "service-worker.js": "/aspen-folio-req/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/aspen-folio-req/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.8376876c.chunk.js.LICENSE.txt": "/aspen-folio-req/static/js/2.8376876c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48caf892.js",
+    "static/js/2.8376876c.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.1e6ebf08.chunk.js"
+  ]
+}
