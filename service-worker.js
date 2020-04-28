@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/aspen-folio-req/precache-manifest.dd390820d398408c12836586930c1090.js"
+  "/aspen-folio-req/precache-manifest.0463c4d9b063227c6718fffbda13b715.js"
 );
 
 self.addEventListener('message', (event) => {
