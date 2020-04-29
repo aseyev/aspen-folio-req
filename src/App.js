@@ -10,6 +10,12 @@ import {
     makeStyles,
 } from "@material-ui/core";
 import ReactDOM from "react-dom";
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: "https://api.aspenclubsoftware.com/webole.asp",
+    responseType: "text",
+});
 
 const useStyles = makeStyles({
     root: {
@@ -28,19 +34,41 @@ const useStyles = makeStyles({
 });
 
 function App() {
-    const [folioId, setfolioId] = useState("00000000");
     const classes = useStyles();
 
+    const [folioId, setfolioId] = useState("00000001");
+    const [Request, setRequest] = useState("x");
+
+    const sendRequest = async () => {
+      console.log('folioId ', folioId)
+        let xmlBody = `<?xml version="1.0" encoding="UTF-8"?> 
+<RequestMessage ElementType="FolioInv"> 
+<Folino>${folioId}</Folino> 
+</RequestMessage>`;
+        let config = {
+            headers: { "Content-Type": "text/xml" },
+        };
+        let res = await api.post(api.baseURL, xmlBody, config);
+        setRequest(res.data);
+        console.log('Request: ', res.data);
+        alert(`xmlRequest for this FolioId: ${folioId}\n${res.data}`)
+    };
+
     const handleKey = (e) => {
-      let value = e.target.value.trim()
-      let regexp = /^[0-9]*$/g
-      if (regexp.test(value)) {
-        if(value.length < 9) {value = '00000000' + value}
-        if(value.length > 8) {value=value.slice(-8)} 
-      }
-      else value='00000000'
-      setfolioId(value)
-    }
+        let value = e.target.value.trim();
+        let regexp = /^[0-9]*$/g;
+        if (regexp.test(value)) {
+            if (value.length < 9) {
+                value = "00000000" + value;
+            }
+            if (value.length > 8) {
+                value = value.slice(-8);
+            }
+        } else value = "00000000";
+        setfolioId(value);
+        console.log(folioId);
+    };
+
     return (
         <Container maxWidth="sm">
             <Box>
@@ -68,6 +96,7 @@ function App() {
                         className={classes.button}
                         variant="contained"
                         color="primary"
+                        onClick={sendRequest}
                     >
                         Request PDF
                     </Button>
